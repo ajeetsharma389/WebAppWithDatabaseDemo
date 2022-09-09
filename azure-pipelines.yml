@@ -30,7 +30,7 @@ steps:
     command: 'build'
     projects: |
       '**/*.csproj'
-      '!**/*SeleniumUiTests.csproj' # This ignores projects with the occurrence of Mobile anywhere in the filename  
+      '!**/*SeleniumUiTests*.csproj' # This ignores projects with the occurrence of Mobile anywhere in the filename  
 
 - task: VSBuild@1
   inputs:
