@@ -16,16 +16,17 @@ variables:
 
 steps:
 - task: NuGetToolInstaller@1
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'build'
-    projects: '**/*.csproj'
+#- task: DotNetCoreCLI@2
+#  inputs:
+#    command: 'build'
+#    projects: '**/*.csproj'
 
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
-    projects: '!**/*SeleniumUiTests.csproj'
-              
+    projects: |
+      '**/*.csproj'
+      '!**/*SeleniumUiTests*.csproj' # This ignores projects with the occurrence of Mobile anywhere in the filename  
 
 - task: NuGetCommand@2
   inputs:
