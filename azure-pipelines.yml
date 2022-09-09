@@ -19,7 +19,13 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
-    projects: '**/*.csproj' , '! **/*SeleniumUiTests.csproj'
+    projects: '**/*.csproj'
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'build'
+    projects: '!**/*SeleniumUiTests.csproj'
+              
 
 - task: NuGetCommand@2
   inputs:
